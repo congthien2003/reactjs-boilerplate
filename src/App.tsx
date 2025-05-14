@@ -1,19 +1,20 @@
 import { useState } from "react";
 import "./App.css";
-import { Button } from "@chakra-ui/react";
+import AdminLayout from "./components/layout/AdminLayout";
 
 function App() {
 	const [count, setCount] = useState(0);
 
 	return (
 		<>
-			<Button
-				onClick={() => setCount(count + 1)}
-				variant={"solid"}
-				colorScheme={"dark"}
-				mt={2}>
-				Click me {count}
-			</Button>
+			<AdminLayout>
+				{/* <Loading /> */}
+				<button
+					className="bg-red-400 rounded-md px-2 py-1 font-bold"
+					onClick={() => setCount(count + 1)}>
+					Click me {count}
+				</button>
+			</AdminLayout>
 		</>
 	);
 }
